@@ -1,2 +1,2 @@
 # DL-NLP
-Deep Learning architectures for NLP implementations in Tensorflow
+Implementation of deep learning architectures for NLP in Tensorflow
