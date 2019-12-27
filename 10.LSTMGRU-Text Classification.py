@@ -9,7 +9,7 @@ from time import time
 import random
 from tensorboard import version;
 print("Tensorboard version: ", version.VERSION)
-%load_ext tensorboard
+#load_ext tensorboard
 from tensorboard.plugins.hparams import api as hp
 
 data_dir_path = './datasets/'
@@ -189,7 +189,7 @@ class MultiLayerLSTM:
 
 m = MultiLayerLSTM()
 points_explored, acc_params = m.random_search(train_dataset, validation_dataset, 42)
-opt_params = sorted(acc_params,key=lambda x: x[0], reverse=True)[1]
+opt_params = sorted(acc_params,key=lambda x: x[0], reverse=True)[0][1]
 m.setup_model(opt_params)
 m.eval_test(test_dataset)
 
@@ -318,6 +318,6 @@ class GRUNetwork:
 
 m = GRUNetwork()
 points_explored, acc_params = m.random_search(train_dataset, validation_dataset, 42)
-opt_params = sorted(acc_params,key=lambda x: x[0], reverse=True)[1]
+opt_params = sorted(acc_params,key=lambda x: x[0], reverse=True)[0][1]
 m.setup_model(opt_params)
 m.eval_test(test_dataset)
